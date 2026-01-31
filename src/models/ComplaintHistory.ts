@@ -44,6 +44,11 @@ const ComplaintHistorySchema = new Schema(
       default: Date.now,
       index: true,
     },
+    remark: {
+      type: String,
+      default: null,
+    }
+
   },
   {
     versionKey: false,
