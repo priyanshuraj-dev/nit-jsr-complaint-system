@@ -2,31 +2,27 @@ import mongoose, { Schema, model, models } from "mongoose";
 
 const UserSchema = new Schema(
   {
-    name: {
-      type: String,
-      required: true,
-      trim: true,
-    },
+    name: String,
 
     email: {
       type: String,
-      required: true,
       unique: true,
-      lowercase: true,
+      required: true,
+    },
+
+    password: {
+      type: String,
+      default: null, // null for Google users
+      required: true,
     },
 
     role: {
       type: String,
-      required: true,
       enum: ["STUDENT", "ADMIN", "SUPER_ADMIN"],
+      required: true,
     },
 
     registrationNumber: {
-      type: String,
-      default: null, // only students will send this
-    },
-
-    department: {
       type: String,
       default: null,
     },
