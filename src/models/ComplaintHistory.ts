@@ -15,22 +15,10 @@ const ComplaintHistorySchema = new Schema(
       enum: [
         "CREATED",
         "CLAIMED",
-        "STATUS_CHANGED",
-        "PRIORITY_CHANGED",
         "ESCALATED",
         "RESOLVED",
       ],
       index: true,
-    },
-
-    oldValue: {
-      type: String,
-      default: null,
-    },
-
-    newValue: {
-      type: String,
-      default: null,
     },
 
     performedBy: {
